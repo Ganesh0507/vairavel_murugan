@@ -213,6 +213,8 @@ html,body {
 	    flex-direction: column;
 	    border-radius: 5px 0px 0px 5px;
 	    background: linear-gradient(259.76deg,#fd892f 0,#f9b522 100%);
+	    z-index: 2;
+    	overflow: hidden;
 	}
 	.vm_socialFixed a + a{
 		margin: 0
@@ -280,5 +282,24 @@ html,body {
 		}
 		.vm_nav li {
 		    margin: 0 10px;
+		}
+		.vm_footer .vm_container + .vm_container {
+		    justify-content: center;
+		    flex-direction: column;
+		}
+		.vm_ftrLogo+.vm_social {
+		    margin-top: 25px;
+		}
+		.vm_ftrLogo+.vm_social a {
+		    transform: scale(1.25);
+		}
+		.vm_social a + a {
+		    margin-left: 20px;
+		}
+		.vm_socialFixed a + a {
+		    margin: 0;
+		}
+		.vm_social.vm_socialFixed {
+		    transform: scale(1.2);
 		}
 	}
