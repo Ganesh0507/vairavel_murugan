@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>VairaVelMurugan</title>
+	<link href="./img/murugan.png" type="IMAGE/X-ICON" rel="SHORTCUT ICON">
+
+<style type="text/css">
+	html,body {
+		margin: 0;
+	    font-family: Arial, sans-serif;
+	    letter-spacing: .1px;
+	    line-height: 1.6;
+	}
+	.vm_navCon{
+		background-color: #fff;
+	    position: fixed;
+    	width: 100%;
+    	box-shadow: 0 1px 3px 0 rgba(27,36,50,.15);
+	}
+	.vm_container{
+		max-width: 1200px;
+		padding: 0 15px;
+		margin: 0 auto;
+		box-sizing: border-box;
+	}
+	.vm_nav{
+		list-style-type: none;
+		padding: 5px 0;
+		margin: 0;
+		height: 45px;
+		display: flex;
+		align-items: center;
+	}
+	.vm_nav li{
+		margin: 0 15px
+	}
+	.vm_nav a{
+		text-decoration: none;
+		cursor: pointer;
+		font-size: 16px;
+   		letter-spacing: 1px;
+   		color: #333;
+   		transition: .3s all ease
+	}
+	.vm_nav a:hover, .vm_active a {
+	    color: #f9b522;
+	}
+	.vm_footer{
+		background-color: #292929;
+    	padding: 20px 0;
+	}
+	
+	.vm_social a {
+	    text-decoration: none;
+	    display: inline-block;
+	    height: 35px;
+	    width: 35px;
+	    background-image: url("./img/footer.png");
+    	background-size: 175px;
+    	background-position: 1px 0px;
+    	transition: .3s all ease;
+    	border-radius: 2px
+	}
+	.vm_social .vm_socialLogo2{background-position: -32px 0px}
+	.vm_social .vm_socialLogo3{background-position: -66px 0px}
+	.vm_social .vm_socialLogo4{background-position: -99px 0px}
+	.vm_social a:hover{
+		background-color: #f9b522
+	}
+	.vm_social a + a{
+		margin-left: 7px
+	}
+	.vm_social img{
+		max-width: 100%;
+		max-height: 100%
+	}
+	.vm_ftrLogo{
+		height: 45px;
+		width: 45px
+	}
+	.vm_ftrLogo img{
+	    max-width: 100%;
+    	max-height: 100%;
+	}
+	.vm_flxBwn{
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+	}
+	.vm_df{
+		display: flex;
+		flex-wrap: wrap;
+	}
+	.vm_col{
+		padding: 0 15px;
+    	width: 50%;
+    	box-sizing: border-box;
+	}
+	.vm_h4{
+		font-size: 20px;
+	    font-weight: 500;
+	    color: #f9b522;
+	    margin:0 0 15px;
+	}
+	.vm_ftrMap {
+	    width: 100%;
+	    height: 295px;
+	}
+	.vm_container + .vm_container{
+		margin-top: 25px
+	}
+	.vm_footer .vm_container + .vm_container {
+	    margin-top: 25px;
+	    padding-top: 25px;
+	    border-top: 1px solid #fff;
+	}
+	.vm_ftrList{
+		list-style-type: none;
+		margin: 0;
+		padding: 0
+	}
+	.vm_ftrList a{
+		text-decoration: none;
+	    font-size: 14px;
+	    font-weight: 400;
+	    color: #fff;
+	    letter-spacing: 1px;
+	}
+	.vm_head{
+		background-image: url("./img/tepm1.jpg");
+    	background-size: cover;
+	    background-position: 50% 15%;
+	    position: relative;
+	}
+	.vm_headSection{
+		padding: 185px 0 130px;
+		background: rgba(1, 24, 117, 0.8);
+	}
+	.vm_headTitle{
+		font-size: 42px;
+	    text-transform: uppercase;
+	    font-weight: bold;
+	    color: #fff
+	}
+	.vm_headTitle span {
+	    color: #f9b522;
+	}
+
+	.vm_midWidget {
+	    padding: 40px 100px;
+	    background-color: #F4F7F9;
+	}
+	.vm_row {
+	    display: flex;
+	    flex-wrap: wrap;
+	    justify-content: space-around;
+	}
+	.vm_box{
+	    background-color: #fff;
+	    border-radius: 5px;
+	    max-width: 380px;
+	    height: 370px;
+	    padding: 30px 20px 40px;
+	    box-sizing: border-box;
+	    text-align: center;
+	    display: flex;
+	    flex-direction: column;
+	    margin-bottom: 40px;
+	}
+	.vm_boxLogo img {
+	    max-height: 70px;
+	    max-width: 70px;
+	}
+	.vm_boxTxtCon{
+		flex: 1;
+	}
+	.vm_boxTitle{
+		font-size: 18px;
+	    font-weight: 800;
+	    color: #333;
+	    margin: 20px 0;
+	}
+	.vm_boxDesc{
+	 	font-size: 13px;
+	    font-weight: 400;
+	    color: #777;
+	}
+	.vm_boxBtn{
+		height: 36px;
+	    max-width: 160px;
+	    border-radius: 4px;
+	    display: inline-block;
+	    background-color: #fff;
+	    border: 1px solid #D5D9DD;
+	    color: #777;
+	    font-size: 13px;
+	    letter-spacing: 0.015em;
+	    padding: 7px 15px;
+	    box-sizing: border-box;
+	    margin: 0 auto;
+	    cursor: pointer;
+	    text-decoration: none;
+	    transition: all 0.2s;
+	}
+	.vm_boxBtn:hover {
+	    background-color: #f9b522;
+	    color: #fff;
+	    border: 1px solid #f9b522;
+	}
+	.vm_social.vm_socialFixed {
+	    position: fixed;
+	    top: 90px;
+	    right: 0;
+	    display: flex;
+	    flex-direction: column;
+	    border-radius: 5px 0px 0px 5px;
+	    background: linear-gradient(259.76deg,#fd892f 0,#f9b522 100%);
+	}
+	.vm_socialFixed a + a{
+		margin: 0
+	}
+
+	@media only screen and (max-width: 1200px){
+		.vm_midWidget {
+		    padding: 40px 30px;
+		}
+	}
+	@media only screen and (max-width: 991px){
+		.vm_row {
+		    justify-content: space-between;
+		}
+		.vm_box {
+		    max-width: 49%;
+		}
+		.vm_col {
+		    width: 100%;
+		}
+		.vm_col + .vm_col {
+		    margin-top: 25px
+		}
+	}
+	@media only screen and (max-width: 768px){
+		.vm_box {
+		    max-width: 100%;
+		    width: 100%;
+		}
+		.vm_headSection {
+		    padding: 125px 0 90px;
+		}
+		.vm_head {
+		    background-size: auto;
+		    background-position: 50% 30px;
+		}
+	}
+	@media screen and (max-width: 600px){
+		.vm_headTitle {
+		    font-size: 26px;
+		}
+		.vm_nav a {
+		    font-size: 14px;
+		}
+		.vm_nav li {
+		    margin: 0 10px;
+		}
+	}
+
+</style>
+
+</head>
+<body>
+	<!-- <div>Arulmigu Vairavelmurugan Temple, Pettai</div> -->
+	<div class="vm_main">
+		<header class="vm_head">
+			<div class="vm_navCon">
+				<div class="vm_container">
+					<ul class="vm_nav">
+						<li class="vm_active"><a href="#">Home</a></li>
+						<li><a href="#">History</a></li>
+						<li><a href="#">Pooja Details</a></li>
+						<!-- <li><a href="#">Festivals</a></li> -->
+						<li><a href="#">Gallery</a></li>
+						<li><a href="#">Donation</a></li>
+					</ul>
+				</div>
+			</div>
+			<div class="vm_social vm_socialFixed">
+				<a class="vm_socialLogo1" href="#"></a>
+				<a class="vm_socialLogo2" href="#"></a>
+				<a class="vm_socialLogo3" href="#"></a>
+				<a class="vm_socialLogo4" href="#"></a>
+			</div>
+			<div class="vm_headSection">
+				<div class="vm_container">
+					<div class="vm_headTitle">Welcome to <br> <span>Sri Vairavelmurugan</span> <br>Alayam</div>
+				</div>
+			</div>
+		</header>
+
+		<div class="vm_midWidget">
+			<div class="vm_row">
+				<div class="vm_box">
+					<div class="vm_boxLogo">
+			            <img src="./img/murugan.png" >
+			        </div>
+			        <div class="vm_boxTxtCon">
+			            <div class="vm_boxTitle">History</div>
+			            <div class="vm_boxDesc">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text</div>
+			        </div>
+			        <div>
+			            <a class="vm_boxBtn" href="#">Know More</a>
+			        </div>
+				</div>
+				<div class="vm_box">
+					<div class="vm_boxLogo">
+			            <img src="./img/murugan.png" >
+			        </div>
+			        <div class="vm_boxTxtCon">
+			            <div class="vm_boxTitle">History</div>
+			            <div class="vm_boxDesc">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text</div>
+			        </div>
+			        <div>
+			            <a class="vm_boxBtn" href="#">Know More</a>
+			        </div>
+				</div>
+				<div class="vm_box">
+					<div class="vm_boxLogo">
+			            <img src="./img/murugan.png" >
+			        </div>
+			        <div class="vm_boxTxtCon">
+			            <div class="vm_boxTitle">History</div>
+			            <div class="vm_boxDesc">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text</div>
+			        </div>
+			        <div>
+			            <a class="vm_boxBtn" href="#">Know More</a>
+			        </div>
+				</div>
+				<div class="vm_box">
+					<div class="vm_boxLogo">
+			            <img src="./img/murugan.png" >
+			        </div>
+			        <div class="vm_boxTxtCon">
+			            <div class="vm_boxTitle">History</div>
+			            <div class="vm_boxDesc">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text</div>
+			        </div>
+			        <div>
+			            <a class="vm_boxBtn" href="#">Know More</a>
+			        </div>
+				</div>
+				<div class="vm_box">
+					<div class="vm_boxLogo">
+			            <img src="./img/murugan.png" >
+			        </div>
+			        <div class="vm_boxTxtCon">
+			            <div class="vm_boxTitle">History</div>
+			            <div class="vm_boxDesc">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text</div>
+			        </div>
+			        <div>
+			            <a class="vm_boxBtn" href="#">Know More</a>
+			        </div>
+				</div>
+			</div>	
+		</div>
+
+		<footer class="vm_footer">
+			<div class="vm_container vm_df">
+				<div class="vm_col vm_col1">
+					<h4 class="vm_h4">Contact</h4>
+					<ul class="vm_ftrList">
+						<li>
+							<a target="_blank">Sri Vairavelmurugan Alayam</a>
+						</li>
+						<li>
+							<a target="_blank">Pettai-627810</a>
+						</li>
+						<li>
+							<a target="_blank">9876543210, 9876543210</a>
+						</li>
+						<li>
+							<a target="_blank">abcdefghijklmnopqrs@gmail.com</a>
+						</li>
+					</ul>
+				</div>
+				<div class="vm_col vm_col2">
+					<h4 class="vm_h4">Location Map</h4>
+
+					<iframe class="vm_ftrMap" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3943.7006951049825!2d77.65843341475487!3d8.719945193735608!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3b04132faf39beb3%3A0xc22475c6b020162!2sVairavelMurugan%20Kovil!5e0!3m2!1sen!2sin!4v1602351751537!5m2!1sen!2sin" style="border:0;" ></iframe>
+
+				</div>
+			</div>
+			<div class="vm_container vm_flxBwn">
+				<div class="vm_ftrLogo">
+					<img src="./img/murugan.png">
+				</div>
+				<div class="vm_social">
+					<a class="vm_socialLogo1" href="#"></a>
+					<a class="vm_socialLogo2" href="#"></a>
+					<a class="vm_socialLogo3" href="#"></a>
+					<a class="vm_socialLogo4" href="#"></a>
+				</div>
+			</div>
+		</footer>		
+	</div>
+</body>
+</html>
