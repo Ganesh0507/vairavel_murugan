@@ -302,4 +302,7 @@ html,body {
 		.vm_social.vm_socialFixed {
 		    transform: scale(1.2);
 		}
+		.vm_h4, .vm_ftrList {
+		    text-align: center;
+		}
 	}
